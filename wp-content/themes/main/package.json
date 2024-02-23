@@ -1,0 +1,23 @@
+{
+  "name": "core-theme",
+  "slug": "core-theme",
+  "version": "1.0.0",
+  "description": "Just a theme",
+  "homepage": "https://twinger.vn/",
+  "author": "Twinger Team",
+  "devDependencies": {
+    "@unocss/cli": "^0.58.5",
+    "@wordpress/browserslist-config": "^2.7.0",
+    "unocss": "^0.58.5"
+  },
+  "browsers": [
+    "extends @wordpress/browserslist-config"
+  ],
+  "scripts": {
+    "dev": "unocss \"./**/*.php\" --watch",
+    "build": "unocss \"site/{snippets,templates}/**/*.php\""
+  },
+  "dependencies": {
+    "@unocss/reset": "^0.58.5"
+  }
+}
