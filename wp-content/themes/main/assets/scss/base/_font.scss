@@ -4,8 +4,8 @@
 
 @import '../abstracts/variables';
 
-$fonts: "PoppinsVN-Black.ttf" "PoppinsVN-Extrabold.ttf" "PoppinsVN-Bold.ttf" "PoppinsVN-Semibold.ttf" "PoppinsVN-Medium.ttf" "PoppinsVN-Regular.ttf" "PoppinsVN-Light.ttf" "PoppinsVN-Extralight.ttf" "PoppinsVN-Thin.ttf";
-// $fonts: null; // no font
+// $fonts: "PoppinsVN-Black.ttf" "PoppinsVN-Extrabold.ttf" "PoppinsVN-Bold.ttf" "PoppinsVN-Semibold.ttf" "PoppinsVN-Medium.ttf" "PoppinsVN-Regular.ttf" "PoppinsVN-Light.ttf" "PoppinsVN-Extralight.ttf" "PoppinsVN-Thin.ttf";
+$fonts: null; // no font
 
 @if $fonts {
     @each $font in $fonts {

@@ -14,10 +14,11 @@
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
-    "dev": "unocss \"./**/*.php\" --watch",
-    "build": "unocss \"site/{snippets,templates}/**/*.php\""
+    "dev": "unocss -m -o uno.min.css \"./**/*.php\" -w",
+    "build": ""
   },
   "dependencies": {
+    "@unocss/preset-mini": "^0.58.5",
     "@unocss/reset": "^0.58.5"
   }
 }

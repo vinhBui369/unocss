@@ -64,12 +64,13 @@ if (is_paged()) {
 
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <link type="image/x-icon" rel="shortcut icon" href="<?php echo FAVICON; ?>">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap&subset=vietnamese" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
     <div id="page" class="site-container">
         <header id="header-main">
             <?php get_template_part('template-parts/header/menu', 'main'); ?>

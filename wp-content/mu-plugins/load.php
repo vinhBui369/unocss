@@ -8,5 +8,5 @@ Author: Twinger
 Author URI: https://twinger.vn/
 */
 include_once "advanced-custom-fields-pro/acf.php";
-// include_once "disable-json-api/disable-json-api.php";
 include_once "mainwp-child/mainwp-child.php";
+include_once "tw-performance/optimize.php";

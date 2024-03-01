@@ -31,6 +31,7 @@ html {
 }
 
 * {
+
   &,
   &::before,
   &::after {
@@ -69,6 +70,14 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 28px;
 }
 
 .site-container {

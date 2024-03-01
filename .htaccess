@@ -4,11 +4,11 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-RewriteBase /unocss/
+RewriteBase /meypearl-harmony-phu-quoc/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /unocss/index.php [L]
+RewriteRule . /meypearl-harmony-phu-quoc/index.php [L]
 </IfModule>
 
 # END WordPress

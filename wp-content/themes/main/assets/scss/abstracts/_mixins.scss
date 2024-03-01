@@ -14,31 +14,37 @@ $xxl: "only screen and (min-width: 1200px)";
         @content;
     }
 }
+
 @mixin xs() {
     @media #{$xs} {
         @content;
     }
 }
+
 @mixin sm() {
     @media #{$sm} {
         @content;
     }
 }
+
 @mixin md() {
     @media #{$md} {
         @content;
     }
 }
+
 @mixin lg() {
     @media #{$lg} {
         @content;
     }
 }
+
 @mixin xl() {
     @media #{$xl} {
         @content;
     }
 }
+
 @mixin xxl() {
     @media #{$xxl} {
         @content;
@@ -53,7 +59,7 @@ $xxl: "only screen and (min-width: 1200px)";
 }
 
 @mixin mediaMinWidth($breakpoints) {
-    @media only screen and (min-width: $breakpoints) {
+    @media only screen and (max-width: $breakpoints) {
         @content;
     }
 }
@@ -64,13 +70,7 @@ $xxl: "only screen and (min-width: 1200px)";
     }
 }
 
-// Transition
-@mixin transition($time) {
-    -moz-transition: all $time ease-in-out;
-    -o-transition: all $time ease-in-out;
-    -webkit-transition: all $time ease-in-out;
-    transition: all $time ease-in-out;
-}
+
 
 // Animation
 @mixin animation($value) {
@@ -84,12 +84,15 @@ $xxl: "only screen and (min-width: 1200px)";
     @-webkit-keyframes #{$name} {
         @content;
     }
+
     @-moz-keyframes #{$name} {
         @content;
     }
+
     @-o-keyframes #{$name} {
         @content;
     }
+
     @keyframes #{$name} {
         @content;
     }
@@ -113,10 +116,13 @@ $xxl: "only screen and (min-width: 1200px)";
 
 @mixin positionCenter($width, $height: 0) {
     position: absolute;
-    @if $height != 0 {
+
+    @if $height !=0 {
         top: calc(50% - (#{$height} / 2));
         left: calc(50% - (#{$width} / 2));
-    } @else {
+    }
+
+    @else {
         top: calc(50% - (#{$width} / 2));
         left: calc(50% - (#{$width} / 2));
     }
@@ -150,6 +156,7 @@ $xxl: "only screen and (min-width: 1200px)";
     height: $dimensions;
     position: relative;
     width: $dimensions;
+
     span {
         background-color: currentColor;
         display: block;
@@ -160,6 +167,7 @@ $xxl: "only screen and (min-width: 1200px)";
         transition-timing-function: $easing;
         width: $width;
         margin-bottom: $mb;
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -198,7 +206,6 @@ $xxl: "only screen and (min-width: 1200px)";
     }
 }
 
-
 // Clearfix
 @mixin clearfix {
     &::after {
@@ -232,15 +239,19 @@ $xxl: "only screen and (min-width: 1200px)";
     outline: none;
     padding: 0;
     margin: 0;
-    @if $bg != unset {
+
+    @if $bg !=unset {
         background: $bg;
     }
-    @if $color != unset {
+
+    @if $color !=unset {
         color: $color;
     }
-    @if $border != unset {
+
+    @if $border !=unset {
         border: $border;
     }
+
     @include flexBox(center, center);
 }
 
