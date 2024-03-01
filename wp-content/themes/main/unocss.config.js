@@ -3,16 +3,24 @@ import {
     defineConfig,
     presetAttributify,
     presetUno,
-    presetMini
+    presetMini,
+    handler
 } from 'unocss'
 export default defineConfig({
     rules: [
     ],
-    shortcuts: {
-        'tw-container': 'max-w-1208px w-100% ma max-xl:px-30px max-sm:px-15px',
-        'guideline-cricket': 'w-70px h-70px rd-50% flex flex-items-center flex-justify-center cursor-pointer  transition-300 ease-in-out',
-        '--G-2': 'bg-[linear-gradient(214deg,_#0A77CB_-80.97%,_#49D5DF_106.34%,_#3840EF_247.64%)]'
-    },
+    shortcuts: [
+        {
+            'tw-container': 'max-w-1208px w-100% ma max-xl:px-30px max-sm:px-15px',
+            'guideline-cricket': 'w-70px h-70px rd-50% flex flex-items-center flex-justify-center cursor-pointer  transition-300 ease-in-out',
+            'G-1': '[background:linear-gradient(61deg,_#0A77CB_-9.8%,_#49D5DF_53.39%,_#3840EF_101.05%)]',
+            'G-2': '[background:linear-gradient(214deg,_#0A77CB_-80.97%,_#49D5DF_106.34%,_#3840EF_247.64%)]',
+            'tw-button': 'py-6px px-20px rd-36px decoration-none flex-inline color-white'
+
+
+
+        }
+    ],
     theme: {
         breakpoints: {
             sm: '576px',
@@ -23,6 +31,7 @@ export default defineConfig({
 
         },
         colors: {
+            "g-1": "",
             neutral: {
                 1: "#FFF",
                 2: "#F3F4F7",

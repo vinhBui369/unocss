@@ -3,7 +3,7 @@
 get_header()
 ?>
 <div class="py-100px">
-    <div class="tw-container --G-2">
+    <div class="tw-container ">
         <div class="flex gap-20px py-30px flex-items-center flex-wrap ">
             <div>
                 blue
@@ -92,9 +92,19 @@ get_header()
             <div class="guideline-cricket bg-neutral-8 " title="neutral-8">
             </div>
         </div>
-
+        <div class="flex gap-20px py-30px flex-content-center flex-wrap">
+            <div>gradient</div>
+            <div class="guideline-cricket G-1" title="G-1">
+            </div>
+            <div class="guideline-cricket G-2" title="G-2">
+            </div>
+        </div>
+        <div class="flex gap-20px py-30px flex-content-center flex-wrap">
+            <div>button</div>
+            <a href="#" class="tw-button">demo</a>
+        </div>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
+
 <?php get_footer() ?>
