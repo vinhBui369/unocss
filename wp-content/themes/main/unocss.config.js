@@ -4,21 +4,17 @@ import {
     presetAttributify,
     presetUno,
     presetMini,
-    handler
-} from 'unocss'
+} from 'unocss';
+import presetWebFonts from '@unocss/preset-web-fonts';
+
 export default defineConfig({
     rules: [
     ],
     shortcuts: [
         {
-            'tw-container': 'max-w-1208px w-100% ma max-xl:px-30px max-sm:px-15px',
-            'guideline-cricket': 'w-70px h-70px rd-50% flex flex-items-center flex-justify-center cursor-pointer  transition-300 ease-in-out',
-            'G-1': '[background:linear-gradient(61deg,_#0A77CB_-9.8%,_#49D5DF_53.39%,_#3840EF_101.05%)]',
-            'G-2': '[background:linear-gradient(214deg,_#0A77CB_-80.97%,_#49D5DF_106.34%,_#3840EF_247.64%)]',
-            'tw-button': 'py-6px px-20px rd-36px decoration-none flex-inline color-white'
-
-
-
+            'tw-container': 'max-w-1200px w-100% ma max-xl:px-30px max-sm:px-15px',
+            'heading': 'font-manrope font-400',
+            'body': 'font-manrope '
         }
     ],
     theme: {
@@ -30,62 +26,36 @@ export default defineConfig({
             xxl: '1400px',
 
         },
+        /* cấu hình css chung tại đấy  */
         colors: {
-            "g-1": "",
-            neutral: {
-                1: "#FFF",
-                2: "#F3F4F7",
-                3: "#E9EBF1",
-                4: "#DDE0E9",
-                5: "#BAC0D3",
-                6: "#868EAC",
-                7: "#3C435D",
-                8: "#14161F",
-            },
-            blue: {
-                1: "#E7F1FA",
-                2: "#B6D6EF",
-                3: "#6CADE0",
-                4: "#3B92D5",
-                5: "#0A77CB",
-                6: "#085FA2",
-                7: "#06477A",
-                8: "#043051",
-                9: "#021829",
-            },
-            purple: {
-                1: "#EBECFD",
-                2: "#C3C6FA",
-                3: "#888CF5",
-                4: "#6066F2",
-                5: "#3840EF",
-                6: "#2D33BF",
-                7: "#22268F",
-                8: "#161A60",
-                9: "#0B0D30",
-            },
-            teal: {
-                1: "#EDFBFC",
-                2: "#C8F2F5",
-                3: "#92E6EC",
-                4: "#6DDDE5",
-                5: "#49D5DF",
-                6: "#3AAAB2",
-                7: "#2C8086",
-                8: "#1D5559",
-                9: "#0F2B2D",
+            'green': {
+                // 5: '#E9F5F5',
+                1: '#9AC7C8',
+                2: '#7DB4B8',
+                3: '#417D80',
+                4: '#214D4F',
+                5: '#142D29',
+                6: '#122925',
+                7: '#0E201D',
+                8: '#0B1917',
+                9: '#081311'
             },
 
         }
-        , fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['Fira Code', 'monospace']
-        },
     },
     presets: [
         presetUno(),
         presetAttributify(),
         presetMini(),
-
+        presetWebFonts({
+            provider: 'google',
+            fonts: {
+                // these will extend the default theme
+                manrope: [{
+                    name: 'Manrope',
+                    weights: ['200', '300', '400', '500', '600', '700', '800'],
+                }],
+            },
+        }),
     ],
 })

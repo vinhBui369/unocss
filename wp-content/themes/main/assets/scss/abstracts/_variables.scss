@@ -1,36 +1,36 @@
-// -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
-// -----------------------------------------------------------------------------
-$black: hsl(0, 0%, 4%) !default;
-$black-bis: hsl(0, 0%, 7%) !default;
-$black-ter: hsl(0, 0%, 14%) !default;
-
-$grey-darker: hsl(0, 0%, 21%) !default;
-$grey-dark: hsl(0, 0%, 29%) !default;
-$grey: hsl(0, 0%, 48%) !default;
-$grey-light: hsl(0, 0%, 71%) !default;
-$grey-lighter: hsl(0, 0%, 86%) !default;
-$grey-lightest: hsl(0, 0%, 93%) !default;
-
-$white-ter: hsl(0, 0%, 96%) !default;
-$white-bis: hsl(0, 0%, 98%) !default;
-$white: hsl(0, 0%, 100%) !default;
-
-$orange: hsl(14, 100%, 53%) !default;
-$yellow: hsl(48, 100%, 67%) !default;
-$green: hsl(141, 53%, 53%) !default;
-$turquoise: hsl(171, 100%, 41%) !default;
-$cyan: hsl(204, 71%, 53%) !default;
-$blue: hsl(217, 71%, 53%) !default;
-$purple: hsl(271, 100%, 71%) !default;
-$red: hsl(348, 86%, 61%) !default;
-
-$easing: ease-out !default;
-$radius-small: 2px !default;
-$radius: 4px !default;
-$radius-large: 6px !default;
-$radius-rounded: 290486px !default;
-$speed: 86ms !default;
-
 $img-url: './assets/images';
 $font-url: './assets/fonts';
+
+
+:root {
+    --style-Green-green-50: #E9F5F5;
+    --style-Green-green-100: #9AC7C8;
+    --style-Green-green-200: #7DB4B8;
+    --style-Green-green-300: #417D80;
+    --style-Green-green-400: #214D4F;
+    --style-Green-green-500: #142D29;
+    --style-Green-green-600: #122925;
+    --style-Green-green-700: #0E201D;
+    --style-Green-green-800: #0B1917;
+    --style-Green-green-900: #081311;
+    --style-Red-red-50: #FFF5F5;
+    --style-Red-red-100: #D2B4B5;
+    --style-Red-red-200: #BC9091;
+    --style-Red-red-300: #9D5E5E;
+    --style-Red-red-400: #8A3E3F;
+    --style-Red-red-500: #6D0E0F;
+    --style-Red-red-600: #630D0E;
+    --style-Red-red-700: #4D0A0B;
+    --style-Red-red-800: #3C0808;
+    --style-Red-red-900: #2E0606;
+    --style-Brown-brown-50: #F9F5F0;
+    --style-Brown-brown-100: #ECE0CF;
+    --style-Brown-brown-200: #E3D1B8;
+    --style-Brown-brown-300: #D7BB98;
+    --style-Brown-brown-400: #CFAE84;
+    --style-Brown-brown-500: #C39A65;
+    --style-Brown-brown-600: #B18C5C;
+    --style-Brown-brown-700: #8A6D48;
+    --style-Brown-brown-800: #6B5538;
+    --style-Brown-brown-900: #52412A;
+}

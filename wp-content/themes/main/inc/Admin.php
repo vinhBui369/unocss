@@ -15,13 +15,14 @@ function custom_type_admin()
         #login h1 a {
             background-image: url('<?php echo LOGO_LOGIN_ADMIN; ?>');
             width: 310px;
-            height: 140px;
+            height: 80px;
             background-size: auto;
             background-position: center bottom;
         }
 
         .login.wp-core-ui {
-            background-color: #e6e6e6;
+            background-image: url('<?php echo LOGO_LOGIN_ADMIN_W ?>');
+            background-color: #F5F5FA;
             background-size: 180px auto;
             background-attachment: fixed;
         }

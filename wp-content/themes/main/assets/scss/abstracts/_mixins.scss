@@ -59,7 +59,7 @@ $xxl: "only screen and (min-width: 1200px)";
 }
 
 @mixin mediaMinWidth($breakpoints) {
-    @media only screen and (max-width: $breakpoints) {
+    @media only screen and (min-width: $breakpoints) {
         @content;
     }
 }
@@ -70,33 +70,6 @@ $xxl: "only screen and (min-width: 1200px)";
     }
 }
 
-
-
-// Animation
-@mixin animation($value) {
-    -webkit-animation: $value;
-    -moz-animation: $value;
-    -o-animation: $value;
-    -ms-animation: $value;
-}
-
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-
-    @-o-keyframes #{$name} {
-        @content;
-    }
-
-    @keyframes #{$name} {
-        @content;
-    }
-}
 
 // Position fixed
 @mixin position($type: absolute, $top: 0, $right: 0, $bottom: 0, $left: 0) {
@@ -128,26 +101,7 @@ $xxl: "only screen and (min-width: 1200px)";
     }
 }
 
-// Transform
-@mixin transform($value) {
-    transform: $value;
-    -webkit-transform: $value;
-    -moz-transform: $value;
-}
 
-@mixin flexCenterDirection($direction: initial) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: $direction;
-}
-
-@mixin flexBox($align: flex-start, $justify: flex-start, $flex: initial) {
-    display: flex;
-    align-items: $align;
-    justify-content: $justify;
-    flex-direction: $flex;
-}
 
 // Hamburger
 @mixin hamburger($dimensions, $speed: 0.2s, $easing: ease-in-out, $width: 16px, $height: 1px, $mb: 3px) {
@@ -195,16 +149,6 @@ $xxl: "only screen and (min-width: 1200px)";
     }
 }
 
-// Placeholder
-@mixin placeholder {
-    $placeholders: ":-moz" ":-webkit-input" "-moz" "-ms-input";
-
-    @each $placeholder in $placeholders {
-        &:#{$placeholder}-placeholder {
-            @content;
-        }
-    }
-}
 
 // Clearfix
 @mixin clearfix {
@@ -215,63 +159,6 @@ $xxl: "only screen and (min-width: 1200px)";
     }
 }
 
-// Loader
-@mixin loader {
-    @include animation(spinAround 500ms infinite linear);
-    border: 2px solid $grey-lighter;
-    border-radius: $radius-rounded;
-    border-right-color: transparent;
-    border-top-color: transparent;
-    content: "";
-    display: block;
-    height: 1em;
-    position: relative;
-    width: 1em;
-}
-
-%loader {
-    @include loader;
-}
-
-@mixin button($width, $height, $bg: unset, $color: unset, $border: unset) {
-    width: $width;
-    height: $height;
-    outline: none;
-    padding: 0;
-    margin: 0;
-
-    @if $bg !=unset {
-        background: $bg;
-    }
-
-    @if $color !=unset {
-        color: $color;
-    }
-
-    @if $border !=unset {
-        border: $border;
-    }
-
-    @include flexBox(center, center);
-}
-
-@mixin background($position, $repeat, $size) {
-    background-position: $position;
-    background-repeat: $repeat;
-    background-size: $size;
-}
-
-@mixin imgScale {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    transition: all 0.3s ease-in-out;
-}
 
 @mixin wordBreak($line, $height) {
     word-break: break-word;
@@ -280,4 +167,20 @@ $xxl: "only screen and (min-width: 1200px)";
     -webkit-box-orient: vertical;
     overflow: hidden;
     height: $height;
+}
+
+@mixin aspect-ratio($width, $height) {
+    padding-top: percentage($number: $height/$width);
+    width: 100%;
+    position: relative;
+    
+    img,
+    svg,
+    iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }

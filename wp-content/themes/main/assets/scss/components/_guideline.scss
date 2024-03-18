@@ -1,0 +1,16 @@
+.tw-container {
+    margin: auto;
+    max-width: 1208px;
+    width: 100%;
+
+    @include mediaMaxWidth (1199.9px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media (max-width: 575.9px) {
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

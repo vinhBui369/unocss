@@ -21,7 +21,7 @@ module.exports = function (grunt) {
             }
         },
         postcss: {
-            dev: {
+            autoprefixer: {
                 options: {
                     map: true,
                     processors: [
@@ -45,14 +45,6 @@ module.exports = function (grunt) {
             minify: {
                 options: {
                     processors: [
-                        require('autoprefixer')({
-                            'overrideBrowserslist': [
-                                'iOS >= 14.1',
-                                'safari >= 14.1',
-                                '>= 5%',
-                                'last 2 versions'
-                            ]
-                        }),
                         require('cssnano')({
                             preset: ['default', {
                                 discardComments: {
@@ -72,6 +64,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
+
         uglify: {
             options: {
                 mangle: true
@@ -91,16 +84,25 @@ module.exports = function (grunt) {
                 files: [
                     'assets/scss/**/*.scss'
                 ],
+                options: {
+                    spawn: false,
+                },
                 tasks: ['styles']
             },
             scripts: {
-                files: ['assets/js/scripts/**/*.js'],
+                files: [
+                    'assets/js/scripts/**/*.js',
+                    '!assets/js/scripts/**/*.min.js'
+                ],
+                options: {
+                    spawn: false,
+                },
                 tasks: ['uglify']
-            }
+            },
         },
         checktextdomain: {
             options: {
-                text_domain: 'thecore',
+                text_domain: 'corex',
                 correct_domain: true,
                 keywords: [
                     '__:1,2d',
@@ -134,6 +136,36 @@ module.exports = function (grunt) {
                 expand: true
             },
         },
+        makepot: {
+            target: {
+                options: {
+                    cwd: 'languages',
+                    updateTimestamp: true,					// Whether the POT-Creation-Date should be updated without other changes.
+                    potHeaders: {
+                        poedit: true,                 // Includes common Poedit headers.
+                        'last-translator': 'Twinger, https://twinger.vn/',
+                        'Language-Team': 'Twinger',
+                        'Language': ' ko_KR',
+                        'Content-Type': ' text/plain; charset=UTF-8',
+                        'Content-Transfer-Encoding': ' 8bit',
+                        'Plural-Forms': ' nplurals=2; plural=(n != 1);',
+                        'x-poedit-basepath': '..',
+                        'X-Poedit-KeywordsList': ' __;_e',
+                        'x-textdomain-support': 'yes',
+                        'X-Poedit-SearchPath-0': ' .',
+                        'x-poedit-searchpathexcluded-0': 'node_modules',
+                        'x-poedit-searchpathexcluded-1': 'inc',
+                    },
+                    mainFile: 'style.css',
+                    potFilename: 'ko_KR.pot',
+                    type: 'wp-theme',
+                    updatePoFiles: true,
+
+
+                }
+            }
+        }
+
     });
     grunt.registerTask('i18n', [
         'checktextdomain',
@@ -144,9 +176,7 @@ module.exports = function (grunt) {
     ]);
     // Default task(s).
     grunt.registerTask('default', [
-        // 'i18n',
-        'styles',
+        'watch',
     ]);
-
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
 };

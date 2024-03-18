@@ -4,21 +4,36 @@
   "version": "1.0.0",
   "description": "Just a theme",
   "homepage": "https://twinger.vn/",
-  "author": "Twinger Team",
-  "devDependencies": {
-    "@unocss/cli": "^0.58.5",
-    "@wordpress/browserslist-config": "^2.7.0",
-    "unocss": "^0.58.5"
+  "author": "Twinger team",
+  "dependencies": {
+    "@unocss/cli": "^0.58.6",
+    "@unocss/preset-mini": "^0.58.6",
+    "@unocss/reset": "^0.58.6",
+    "node-sass": "^9.0.0",
+    "unocss": "^0.58.6"
   },
-  "browsers": [
+  "devDependencies": {
+    "@wordpress/browserslist-config": "^5.36.0",
+    "autoprefixer": "^9.8.6",
+    "concurrently": "^8.2.2",
+    "cssnano": "^4.1.10",
+    "grunt": "^1.6.1",
+    "grunt-checktextdomain": "^1.0.1",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^3.1.0",
+    "grunt-text-replace": "^0.4.0",
+    "load-grunt-tasks": "^5.1.0",
+    "matchdep": "^2.0.0"
+  },
+  "browserslist": [
     "extends @wordpress/browserslist-config"
   ],
   "scripts": {
-    "dev": "unocss -m -o uno.min.css \"./**/*.php\" -w",
-    "build": ""
-  },
-  "dependencies": {
-    "@unocss/preset-mini": "^0.58.5",
-    "@unocss/reset": "^0.58.5"
+    "grunt": "grunt",
+    "unocss": "unocss  -m -o uno.min.css \"./**/*.php\" -w",
+    "dev": "concurrently --kill-others \"npm run unocss\" \"grunt\""
   }
 }

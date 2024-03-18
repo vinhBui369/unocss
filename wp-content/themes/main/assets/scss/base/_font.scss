@@ -1,20 +1,80 @@
-// -----------------------------------------------------------------------------
-// This file contains all @font-face declarations, if any.
-// -----------------------------------------------------------------------------
-
 @import '../abstracts/variables';
 
-// $fonts: "PoppinsVN-Black.ttf" "PoppinsVN-Extrabold.ttf" "PoppinsVN-Bold.ttf" "PoppinsVN-Semibold.ttf" "PoppinsVN-Medium.ttf" "PoppinsVN-Regular.ttf" "PoppinsVN-Light.ttf" "PoppinsVN-Extralight.ttf" "PoppinsVN-Thin.ttf";
-$fonts: null; // no font
+$gilroys: (
+    "SVN-Gilroy-Thin.otf": (100,
+        normal,
+    ),
+    "SVN-Gilroy-Xlight.otf": (200,
+        normal,
+    ),
+    "SVN-Gilroy-Light.otf": (300,
+        normal,
+    ),
+    "SVN-Gilroy-Regular.otf": (400,
+        normal,
+    ),
+    "SVN-Gilroy-Medium.otf": (500,
+        normal,
+    ),
+    "SVN-Gilroy-SemiBold.otf": (600,
+        normal,
+    ),
+    "SVN-Gilroy-Bold.otf": (700,
+        normal,
+    ),
+    "SVN-Gilroy-XBold.otf": (800,
+        normal,
+    ),
+    "SVN-Gilroy-Black.otf": (900,
+        normal,
+    ),
+);
 
-@if $fonts {
-    @each $font in $fonts {
+@if $gilroys {
+    @each $name, $key in $gilroys {
         @font-face {
-            font-family: "#{$font}";
-            src: url("#{$font-url}/#{$font}") format("truetype");
-            font-weight: normal;
-            font-style: normal;
+            font-family: "SVN-Gilroy";
+            src: url("#{$font-url}/#{$name}") format("opentype");
+            // src: url("#{$font-url}/#{$name}") format("truetype"); đổi khi định dạng khác
+            font-weight: nth($key, 1);
+            font-style: nth($key, 2);
             font-display: swap;
         }
+    }
+}
+
+
+/* font weight */
+.font {
+    &-thin {
+        font-weight: 100;
+    }
+
+    &-extralight {
+        font-weight: 200;
+    }
+
+    &-light {
+        font-weight: 300;
+    }
+
+    &-normal {
+        font-weight: 400;
+    }
+
+    &-medium {
+        font-weight: 500;
+    }
+
+    &-bold {
+        font-weight: 700;
+    }
+
+    &-extrabold {
+        font-weight: 800;
+    }
+
+    &-black {
+        font-weight: 900;
     }
 }
